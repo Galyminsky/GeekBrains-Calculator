@@ -16,6 +16,6 @@
     <string name="bnt_dev">/</string>
     <string name="bnt_dot">.</string>
     <string name="bnt_equal">=</string>
-    <string name="result">Result</string>
+    <string name="result"></string>
 
 </resources>
