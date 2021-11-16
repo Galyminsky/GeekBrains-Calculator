@@ -4,15 +4,219 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/p4"
     tools:context=".MainActivity">
 
+
     <TextView
+        style="@android:style/Widget.Material.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginTop="252dp"
+        android:text="@string/result"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:textColor="@color/btn_symbol"
+        android:textSize="70sp"
+        android:textStyle="italic"
+        android:typeface="serif"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.815">
+
+    </TextView>
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="2dp"
+        android:layout_marginBottom="-470dp"
+        android:columnCount="4"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:text="@string/bnt_1"
+            android:textColor="@color/btn_number"
+            android:textSize="20sp">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:text="@string/bnt_2"
+            android:textColor="@color/btn_number"
+            android:textSize="20sp">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:text="@string/bnt_3"
+            android:textColor="@color/btn_number"
+            android:textSize="20sp">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:text="@string/bnt_plus"
+            android:textColor="@color/btn_symbol"
+            android:textSize="20sp">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:text="@string/bnt_4"
+            android:textColor="@color/btn_number"
+            android:textSize="20sp">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:text="@string/bnt_5"
+            android:textColor="@color/btn_number"
+            android:textSize="20sp">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:text="@string/bnt_6"
+            android:textColor="@color/btn_number"
+            android:textSize="20sp">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn_min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:text="@string/bnt_min"
+            android:textColor="@color/btn_symbol"
+            android:textSize="20sp">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:text="@string/bnt_7"
+            android:textColor="@color/btn_number"
+            android:textSize="20sp">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:text="@string/bnt_8"
+            android:textColor="@color/btn_number"
+            android:textSize="20sp">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:text="@string/bnt_9"
+            android:textColor="@color/btn_number"
+            android:textSize="20sp">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn_mult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:text="@string/bnt_mult"
+            android:textColor="@color/btn_symbol"
+            android:textSize="20sp">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:text="@string/bnt_0"
+            android:textColor="@color/btn_number"
+            android:textSize="20sp">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn_equal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:text="@string/bnt_equal"
+            android:textColor="@color/btn_symbol"
+            android:textSize="20sp">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn_dot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:text="@string/bnt_dot"
+            android:textColor="@color/btn_symbol"
+            android:textSize="20sp">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btn_dev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:text="@string/bnt_dev"
+            android:textColor="@color/btn_symbol"
+            android:textSize="20sp">
+
+        </Button>
+
+
+    </GridLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
