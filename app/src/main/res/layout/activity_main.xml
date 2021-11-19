@@ -9,7 +9,7 @@
     tools:context=".MainActivity">
 
 
-    <TextView
+    <EditText
         android:id="@+id/txt_result"
         style="@android:style/Widget.Material.TextView"
         android:layout_width="wrap_content"
@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.815">
 
-    </TextView>
+    </EditText>
 
     <GridLayout
         android:id="@+id/gridLayout"

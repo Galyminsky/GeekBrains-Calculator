@@ -12,8 +12,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    final int MENU_RESET_ID = 1;
-    final int MENU_QUIT_ID = 2;
 
     Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0,
             btn_plus, btn_min, btn_mult, btn_equal, btn_dot, btn_dev;
@@ -49,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         btn0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txt_result.setText(txt_result.getText() + "0");
+                txt_result.setText(String.format("%s0", txt_result.getText()));
             }
         });
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -146,23 +144,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        menu.add(0, MENU_RESET_ID, 0, "Reset");
-        menu.add(0, MENU_QUIT_ID, 0, "Quit");
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case MENU_RESET_ID:
-                txt_result.setText("");
-                break;
-            case MENU_QUIT_ID:
-                finish();
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }
