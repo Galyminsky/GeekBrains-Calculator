@@ -10,5 +10,7 @@
     <color name="btn_number">#FF9100</color>
     <color name="btn_symbol">#FF6D00</color>
     <color name="back_ground">#272727</color>
+    <color name="special_botton">#FA0000</color>
+
 
 </resources>

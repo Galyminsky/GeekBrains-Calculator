@@ -1,8 +1,27 @@
 <resources>
     <string name="app_name">GeekBrains - Calculator</string>
     <string name="galyminsky_homework_2">Galyminsky HomeWork_2</string>
-    <string name="ac">AC</string>
     <string name="Result" />
-    <string name="c">C</string>
+    <string name="ac">AC</string>
+    <string name="trash">^</string>
+    <string name="trash2">⬅</string>
+    <string name="dev">/</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_9">9</string>
+    <string name="x">x</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="min">-</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="plus">+</string>
+    <string name="_0">0</string>
+    <string name="point">.</string>
+    <string name="ans">Ans</string>
+    <string name="equal">=</string>
+    <string name="galyminsky_homework_3">Galyminsky_HomeWork_3</string>
 
 </resources>
