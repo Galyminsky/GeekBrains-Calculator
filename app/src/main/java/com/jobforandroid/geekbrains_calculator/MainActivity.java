@@ -1,147 +1,141 @@
 package com.jobforandroid.geekbrains_calculator;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
+
 
 public class MainActivity extends AppCompatActivity {
 
-
-    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0,
-            btn_plus, btn_min, btn_mult, btn_equal, btn_dot, btn_dev;
-
-    TextView txt_result;
-    String oper = "";
-
-
+    private TextView Screen;
+    private String input="",Answer;
+    private boolean clearResult;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        btn0 = findViewById(R.id.btn0);
-        btn1 = findViewById(R.id.btn1);
-        btn2 = findViewById(R.id.btn2);
-        btn3 = findViewById(R.id.btn3);
-        btn4 = findViewById(R.id.btn4);
-        btn5 = findViewById(R.id.btn5);
-        btn6 = findViewById(R.id.btn6);
-        btn7 = findViewById(R.id.btn7);
-        btn8 = findViewById(R.id.btn8);
-        btn9 = findViewById(R.id.btn9);
-        btn_plus = findViewById(R.id.btn_plus);
-        btn_min = findViewById(R.id.btn_min);
-        btn_mult = findViewById(R.id.btn_mult);
-        btn_equal = findViewById(R.id.btn_equal);
-        btn_dot = findViewById(R.id.btn_dot);
-        btn_dev = findViewById(R.id.btn_dev);
-
-        txt_result = findViewById(R.id.txt_result);
-
-        btn0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txt_result.setText(String.format("%s0", txt_result.getText()));
+        Screen=findViewById(R.id.screen);
+    }
+    public void ButtonClick(View view){
+        Button button= (Button) view;
+        String data=button.getText().toString();
+        switch (data){
+            case "AC":
+                input="";
+                break;
+            case "Ans":
+                clearResult=false;
+                input+=Answer;
+                break;
+            case "x":
+                clearResult=false;
+                Solve();
+                input+="*";
+                break;
+            case "^":
+                clearResult=false;
+                Solve();
+                input+="^";
+                break;
+            case "=":
+                clearResult=true;
+                Solve();
+                Answer=input;
+                break;
+            case "⬅":
+                if(input.length()>0){
+                    clearResult=false;
+                    String newText=input.substring(0,input.length()-1);
+                    input=newText;
+                }
+                break;
+            default:
+                if(input==null){
+                    input="";
+                }
+                if(data.equals("+") || data.equals("-") || data.equals("/")){
+                    clearResult=false;
+                    Solve();
+                }
+                else if(clearResult==true){
+                    input="";
+                    clearResult=false;
+                }
+                input+=data;
+        }
+        Screen.setText(input);
+    }
+    public void Solve(){
+        if(input.split("\\*").length==2){
+            String numbers[]=input.split("\\*");
+            try{
+                double mul=Double.parseDouble(numbers[0])*Double.parseDouble(numbers[1]);
+                input=mul+"";
             }
-        });
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txt_result.setText(txt_result.getText() + "1");
+            catch (Exception e){
+                //Display error
             }
-        });
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txt_result.setText(txt_result.getText() + "2");
+        }
+        else if(input.split("/").length==2){
+            String numbers[]=input.split("/");
+            try{
+                double div=Double.parseDouble(numbers[0])/Double.parseDouble(numbers[1]);
+                input=div+"";
             }
-        });
-        btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txt_result.setText(txt_result.getText() + "3");
+            catch (Exception e){
+                //Display error
             }
-        });
-        btn4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txt_result.setText(txt_result.getText() + "4");
+        }
+        else if(input.split("\\^").length==2){
+            String numbers[]=input.split("\\^");
+            try{
+                double pow=Math.pow(Double.parseDouble(numbers[0]),Double.parseDouble(numbers[1]));
+                input=pow+"";
             }
-        });
-        btn5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txt_result.setText(txt_result.getText() + "5");
+            catch (Exception e){
+                //Display error
             }
-        });
-        btn6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txt_result.setText(txt_result.getText() + "6");
+        }
+        else if(input.split("\\+").length==2){
+            String numbers[]=input.split("\\+");
+            try{
+                double sum=Double.parseDouble(numbers[0])+Double.parseDouble(numbers[1]);
+                input=sum+"";
             }
-        });
-        btn7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txt_result.setText(txt_result.getText() + "7");
+            catch (Exception e){
+                //Display error
             }
-        });
-        btn8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txt_result.setText(txt_result.getText() + "8");
+        }
+        else if(input.split("\\-").length>1){
+            String numbers[]=input.split("\\-");
+            if(numbers[0]=="" && numbers.length==2){
+                numbers[0]=0+"";
             }
-        });
-        btn9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txt_result.setText(txt_result.getText() + "9");
+            try{
+                double sub=0;
+                if(numbers.length==2) {
+                    sub = Double.parseDouble(numbers[0]) - Double.parseDouble(numbers[1]);
+                }
+                else if(numbers.length==3){
+                    sub = -Double.parseDouble(numbers[1]) - Double.parseDouble(numbers[2]);
+                }
+                input=sub+"";
             }
-        });
-        btn_plus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txt_result.setText(txt_result.getText() + "+");
+            catch (Exception e){
+                //Display error
             }
-        });
-        btn_min.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txt_result.setText(txt_result.getText() + "-");
+        }
+        String n[]=input.split("\\.");
+        if(n.length>1){
+            if(n[1].equals("0")){
+                input=n[0];
             }
-        });
-        btn_mult.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txt_result.setText(txt_result.getText() + "*");
-            }
-        });
-        btn_equal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txt_result.setText(txt_result.getText() + "=");
-            }
-        });
-        btn_dot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txt_result.setText(txt_result.getText() + ".");
-            }
-        });
-        btn_dev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txt_result.setText(txt_result.getText() + "/");
-            }
-        });
-
-
+        }
+        Screen.setText(input);
     }
 
 }
