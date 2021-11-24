@@ -1,5 +1,6 @@
 package com.jobforandroid.geekbrains_calculator;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -23,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Screen = findViewById(R.id.screen);
+        Screen = findViewById(R.id.screen_out);
+
     }
 
     public void ButtonClick(View view) {
@@ -133,5 +135,4 @@ public class MainActivity extends AppCompatActivity {
         }
         Screen.setText(input);
     }
-
 }
